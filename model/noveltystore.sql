@@ -26,7 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `products`
 --
-
+Create database noveltystore;
+use noveltystore;
 CREATE TABLE `products` (
   `prodId` int(11) NOT NULL,
   `productName` varchar(50) NOT NULL,

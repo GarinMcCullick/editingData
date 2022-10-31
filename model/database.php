@@ -17,7 +17,7 @@ try {
 function getProducts()
 {
     global $db;
-    $sql = "select * from products";
+    $sql = "select * from products where active = 1";
    
     $qry = $db->query($sql);
     $products = $qry->fetchAll();
@@ -33,10 +33,18 @@ function getProduct($id)
 {
     global $db;
     $sql = "select * from products where prodId = $id";
-   
+    //echo($sql);
     $qry = $db->query($sql);
     $rs = $qry->fetch();
     return $rs;
 }
 
+function addProduct(){
+    global $db;
+    $sql = prepare("INSERT INTO products
+    (productName, inventory) VALUES (:productName, :inventory)");
+    $qry=$db->query($sql);
+    $rs = $qry->fetch();
+    return $rs;
+}
 ?>
