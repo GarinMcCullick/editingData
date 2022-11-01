@@ -1,0 +1,86 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-size: 24px;
+  background-color: grey;
+}
+
+.notebook-paper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 550px;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: flex-start;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+ul {
+  width: 100%;
+  height: 95%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+li {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+
+li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.outter-circle {
+  border-radius: 100%;
+  width: 600px;
+  height: 600px;
+  background-color: whitesmoke;
+  z-index: -1;
+  position: fixed;
+  top: 5%;
+  left: 80%;
+  transform: translate(0%, -50%);
+  color: black;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  border: 2px solid silver;
+  z-index: 1;
+  border-radius: 100%;
+}
+
+a {
+  color: whitesmoke;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 18px;
+}
+
+a:hover {
+  color: aqua;
+}
+
+.item-container {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}

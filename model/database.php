@@ -18,18 +18,17 @@ function getProducts()
 {
     global $db;
     $sql = "select * from products where active = 1";
-   
+
     $qry = $db->query($sql);
     $products = $qry->fetchAll();
 
     return $products;
-
 }
 
 // Parameter: productId
 // queries database for that one product
 // returns an array of that product
-function getProduct($id) 
+function getProduct($id)
 {
     global $db;
     $sql = "select * from products where prodId = $id";
@@ -39,12 +38,24 @@ function getProduct($id)
     return $rs;
 }
 
-function addProduct(){
+
+function addProduct()
+{
     global $db;
-    $sql = prepare("INSERT INTO products
-    (productName, inventory) VALUES (:productName, :inventory)");
-    $qry=$db->query($sql);
-    $rs = $qry->fetch();
-    return $rs;
+
+    if (isset($_POST['p1Name']) && isset($_POST['p1Inventory'])) {
+        $p1Name = $_POST['p1Name'];
+        $p1Inventory = $_POST['p1Inventory'];
+
+        $sql = "insert into products (productName, inventory) values('$p1Name',$p1Inventory)";
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+
+        /*
+        $qry = $db->query($sql);
+        $rs = $qry->fetch();
+        return $rs;
+        */
+    }
 }
-?>
