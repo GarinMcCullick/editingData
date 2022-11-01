@@ -4,6 +4,9 @@ body {
   overflow: hidden;
   font-size: 24px;
   background-color: grey;
+  background: url(background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .notebook-paper {
@@ -12,11 +15,31 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
-  height: 550px;
+  min-height: 550px;
+  height: auto;
   background-color: whitesmoke;
   display: flex;
-  align-items: flex-start;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.notebook-paper button {
+  display: inline;
+  width: 50px;
+  height: auto;
+}
+
+.notebook-paper button p {
+  transform: rotate(-90deg);
+  font-size: 28px;
+  letter-spacing: 1rem;
+}
+
+.notebook-paper button:hover {
+  cursor: pointer;
+}
+
+.notebook-paper button:active {
+  background-color: lightgreen;
 }
 
 ul {
@@ -67,14 +90,25 @@ li:hover {
 }
 
 a {
-  color: whitesmoke;
+  color: crimson;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 a:hover {
-  color: aqua;
+  color: green;
+}
+
+.container {
+  width: 20%;
+  height: 90%;
+  margin-left: 15%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  background-color: beige;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .item-container {

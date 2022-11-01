@@ -34,19 +34,22 @@ if ($prodID) {
 </head>
 
 <body>
-    <?php
-    // get all the products from the database
-    $products = getProducts();
-    //loop through the products array and display the name of the product    
-    foreach ($products as $product) {
-        $prodID = $product['prodId'];
-        echo "<div class='item-container'>";
-        echo ("<a href='./?del=$prodID'>del</a> | <a href='edit.php?id=$prodID'>edit</a> $product[productName] >> $product[inventory]</br>");
-        echo "</div>";
-    }
+    <div class="container">
+        <?php
+        // get all the products from the database
+        $products = getProducts();
+        //loop through the products array and display the name of the product  
 
-    ?>
-    <a href='add.php'>add a product</a>
+        foreach ($products as $product) {
+            $prodID = $product['prodId'];
+            echo "<div class='item-container'>";
+            echo ("<a href='./?del=$prodID'>delete</a> | <a href='edit.php?id=$prodID'>edit</a> $product[productName] >> $product[inventory]</br>");
+            echo "</div>";
+        }
+        echo "<a href='add.php'>add a product</a>";
+        ?>
+    </div>
+
     <div class='notebook-paper'>
         <ul>
             <?php
@@ -55,6 +58,10 @@ if ($prodID) {
             }
             ?>
         </ul>
+        <button>
+            <p>Publish</p>
+        </button>
+
     </div>
     <div class='outter-circle'>
         <div class='inner-circle'></div>
